@@ -1,0 +1,272 @@
+/* ==UserStyle==
+@name           LyricsHere Redesign
+@namespace      github.com/ddgroves/userstyles/
+@version        1.0
+@description    A redesign of the LyricsHere by Rob W extension.
+@author         ddgroves
+@license CC-BY-SA-4.0
+==/UserStyle== */
+
+:root {
+	--light: #555;
+  --dark: #999;
+  --light-bg: #f4f4f4;
+  --dark-bg: #19191d;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+.L759-container{
+background: var(--light-bg)!important;
+font-family: "Roboto";
+color: #555!important;
+border: none!important;
+border-radius: 3px!important;
+box-shadow: 0 0 7px rgba(0,0,0,0.4)!important;
+padding: 0!important;
+min-height: 400px!important;
+min-width: 325px!important;
+transition: 0.3s background!important;
+}
+
+.L759-container *{
+transition: 0.3s!important;
+}
+
+.L759-container.L759-skin-dark{
+background: var(--dark-bg)!important;
+color: var(--dark)!important;
+}
+
+.L759-container .L759-title{
+background: url('https://i.imgur.com/z6mNoYD.png') no-repeat top 8px left 12px !important;
+background-color: var(--light-bg)!important;
+background-size: 24px 24px!important;
+border: 1px solid rgba(0,0,0,0.1)!important;
+border-width: 0 0 1px 0!important;
+font-size: 15px;
+height: 40px;
+line-height: 40px;
+padding: 0 35px 0 45px;
+left: 0;
+right: 0!important;
+}
+
+.L759-skin-dark .L759-title{
+background-color: var(--dark-bg)!important;
+border-color: rgba(255, 255, 255, .03)!important;
+}
+
+.L759-container .L759-close{
+background: none!important;
+height: 40px!important;
+width: 40px!important;
+fill: #ccc!important;
+}
+
+.L759-container .L759-close:hover{
+fill: #aaa!important;
+background: none!important;
+}
+
+.L759-skin-dark .L759-close{
+fill: rgba(255, 255, 255, .15)!important;
+}
+
+.L759-skin-dark .L759-close:hover{
+fill: rgba(255, 255, 255, .3)!important;
+}
+
+.L759-container .L759-top-bar{
+background: none!important;
+border: none!important;
+height: 100%;
+position: relative; top: -5px!important; bottom: 0!important; left: 0;
+z-index: 50;
+pointer-events: none;
+}
+
+.L759-container .L759-content-wrapper{
+box-sizing: border-box;
+top: 40px!important; bottom:40px; left: 0; right: 0;
+}
+
+.L759-content{
+padding: 10px 10px 10px 12px!important;
+}
+
+.L759-content .L759-lyrics-line{
+text-indent: 0!important;
+padding: 1.5px 1.5px 0 5px!important;
+}
+
+.L759-content .L759-lyrics-line:hover{
+cursor: pointer;
+}
+
+.L759-container .L759-content .L759-lyrics-line.L759-highlight{
+background: none!important;
+color: #e60f0f!important;
+}
+
+.L759-container .L759-content .L759-result:focus .L759-lyrics-line.L759-highlight{
+outline: none!important;
+}
+
+.L759-toggle-info{
+background: none!important;
+border: none!important;
+position: absolute!important; top: 13px!important; left: 12px;
+font-size: 0;
+height: 24px;
+width: 24px;
+z-index: 70;
+pointer-events: all;
+outline: none!important;
+}
+
+.L759-container .L759-top-bar .L759-toggle-info:hover, .L759-container .L759-top-bar .L759-toggle-info.L759-info-toggled{
+background: none!important;
+}
+
+.L759-container .L759-info-wrapper{
+display: block!important;
+position: absolute; top: 3px; left: 0;
+width: 100%;
+height: 75px;
+pointer-events: none;
+opacity: 0;
+transition: 0.5s!important;
+}
+
+.L759-toggle-info:hover+.L759-info-wrapper{
+opacity: 1;
+pointer-events: all;
+transition: 0.5s!important;
+}
+
+.L759-info-toggled+.L759-info-wrapper{
+opacity: 1!important;
+pointer-events: all;
+}
+
+.L759-info-wrapper:hover{
+pointer-events: all;
+opacity: 1!important;
+}
+
+.L759-container .L759-top-bar .L759-info{
+box-shadow: 0 0 8px rgba(0,0,0,0.55);
+background: url('https://i.imgur.com/z6mNoYD.png') no-repeat top 8px left 12px!important;
+background-color: var(--light-bg)!important;
+border: none!important;
+background-size: 24px 24px!important;
+padding:55px 15px 15px 15px!important;
+}
+
+.L759-container.L759-skin-dark .L759-top-bar .L759-info{
+background-color: var(--dark-bg)!important;
+}
+
+.L759-container .L759-top-bar .L759-info:before{
+content: 'Song Info and Settings';
+position: absolute; top: 12px; left: 45px;
+}
+
+.L759-container .L759-top-bar .L759-info:after{
+content: '';
+position: absolute; top: 40px; left: 0;
+background: rgba(0,0,0,0.1)!important;
+height: 1px;
+width: 100%;
+}
+
+.L759-switch-source{
+height: 35px;
+line-height: 40px!important;
+font-size: 12px!important;
+position: absolute!important; bottom: 0!important; left: unset!important; right: 10px!important;
+z-index: 1000;
+pointer-events: all!important;
+text-decoration: none!important;
+}
+
+.L759-song-info{
+font-size: 0;
+}
+
+.L759-song-title, .L759-link-to-found-source{
+color:#c43131!important;
+display: block;
+font-size: 14px!important;
+font-style: normal!important;
+font-weight: normal!important;
+}
+
+.L759-song-title:before{
+color: var(--light);
+content: 'Song : '
+}
+
+.L759-link-to-found-source{
+border: none!important;
+text-decoration: none!important;
+padding-top: 7px;
+margin-left: 92px;
+}
+
+.L759-link-to-found-source:before{
+color: var(--light);
+position: absolute!important; left: 15px!important;
+content: 'Lyric Source : ';
+pointer-events: none!important;
+}
+
+.L759-container .L759-searchbox{
+border: none!important;
+height: 40px!important;
+left: 0; right: 0;
+}
+
+.L759-container .L759-searchbox .L759-searchterms{
+border: 1px solid rgba(0,0,0,0.1)!important;
+border-width: 1px 0 0 0!important;
+padding-left: 15px;
+padding-right: 150px;
+height: 40px!important;
+    white-space: nowrap!important;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+}
+
+.L759-skin-dark .L759-searchbox .L759-searchterms{
+border-color: rgba(255, 255, 255, .03)!important;
+}
+
+.L759-container .L759-dosearch{
+display: none;
+}
+
+.L759-container .L759-resizer{
+background: url('https://i.imgur.com/oRtGhlN.png')bottom left no-repeat!important;
+height: 10px!important;
+position: absolute; left: 3px; bottom: 3px;
+width: 10px!important;
+}
+
+.L759-container .L759-resizer{
+transform: scale(1)!important;
+}
