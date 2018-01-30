@@ -1,0 +1,446 @@
+/* ==UserStyle==
+@name           Fanfiction Prism V2
+@namespace      https://github.com/ddgroves/userstyles
+@version        1.0.0
+@description    Prism was first now there
+@author         ddgroves
+@preprocessor stylus
+@var checkbox dark-theme 'Enable for Dark Theme' 0
+
+==/UserStyle== */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@-moz-document regexp("https:\\/\\/[^m].*fanfiction[.]net\\/(?!atom).*") {
+
+:root {
+--light-main: #fcfcfc;
+--light-text: #555;
+--light-links: #2c97e6;
+--light-borders: rgba(0,0,0,0.11);
+
+--dark-main: #19191d;
+--dark-text: #888;
+--dark-links: #2c97e6;
+--dark-borders: rgba(0,0,0,0.28);
+
+--book-cover: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNMiwydjI4YzAsMS4xMDUsMC44OTQsMiwxLjk5OSwySDZWMEgzLjk5OUMyLjg5NCwwLDIsMC44OTUsMiwyeiIvPjxwYXRoIGQ9Ik0yOCwwSDh2MzJoMjBjMS4xMDUsMCwyLTAuODk1LDItMlYyQzMwLDAuODk1LDI5LjEwNSwwLDI4LDB6IE0yNCwxNkgxMnYtMmgxMlYxNnogTTI0LDEwSDEyVjhoMTJWMTB6Ii8+PC9nPjwvc3ZnPg==');
+}
+
+/*Ads Element Hider*/
+
+.zmenu[style="text-align:center;padding-top:5px;background-color: #f6f7ee;"], b.caret {
+display: none!important;
+}
+
+.maxwidth {
+min-width: 0%;
+max-width: 100%;
+width: unset;
+margin: 0;
+nav-index: 1;
+}
+
+a {
+color: var(--light-links)!important;
+border: none!important;
+outline: none!important;
+}
+
+body {
+background: var(--light-main)!important;
+color: var(--light-text)!important;
+}
+
+body * {
+box-sizing: border-box!important;
+}
+
+#top {
+background: none!important;
+border-bottom: 1px solid var(--light-borders);
+color: var(--light-text)!important;
+font-size: 0!important;
+height: 70px;
+line-height: 70px;
+padding: 0 45px 0 45px;
+}
+
+#top .menulink {
+height: 70px;
+padding: 0!important;
+}
+
+#top .menulink.maxwidth {
+width: unset!important;
+}
+
+#top .menulink *:not(small) {
+font-size: 14px!important;
+}
+
+#top .menulink small {
+display: none!important;
+}
+
+#top .menulink span[class*="icon"] {
+color: var(--light-text)!important;
+cursor: pointer;
+margin: 0 10px 0 0!important;
+}
+
+#top .menulink > a[href="/"] {
+mask-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOC4wMiAzMS45OSI+PHRpdGxlPkFydGJvYXJkIDE8L3RpdGxlPjxwYXRoIGQ9Ik0yLDBBMiwyLDAsMCwwLDAsMlYzMGEyLDIsMCwwLDAsMiwySDRWMFoiLz48cGF0aCBkPSJNMjYsMEgyNFYxNGwtNC00LTQsNFYwSDZWMzJIMjZhMiwyLDAsMCwwLDItMlYyQTIsMiwwLDAsMCwyNiwwWiIvPjwvc3ZnPg==');
+-webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOC4wMiAzMS45OSI+PHRpdGxlPkFydGJvYXJkIDE8L3RpdGxlPjxwYXRoIGQ9Ik0yLDBBMiwyLDAsMCwwLDAsMlYzMGEyLDIsMCwwLDAsMiwySDRWMFoiLz48cGF0aCBkPSJNMjYsMEgyNFYxNGwtNC00LTQsNFYwSDZWMzJIMjZhMiwyLDAsMCwwLDItMlYyQTIsMiwwLDAsMCwyNiwwWiIvPjwvc3ZnPg==');
+background-color: var(--light-text);
+display: inline-block!important;
+font-size: 0!important;
+height: 32px!important;
+margin-top: 0px!important;
+line-height: 42px!important;
+transition: 0.35s!important;
+width: 28px!important;
+}
+
+#top .menulink > a[href="/"]:hover {
+background-color: var(--light-links);
+}
+
+#top #name_login * {
+color: var(--light-text)!important;
+}
+
+.zmenu {
+background: none!important;
+border: none!important;
+position: absolute; top: 24px; left: 360px!important;
+width: unset!important;
+}
+
+.zmenu #zmenu {
+padding: 0!important;
+}
+
+.zmenu #zmenu table {
+width: unset!important;
+}
+
+.zmenu #zmenu .zui {
+letter-spacing: 0!important;
+}
+
+.zmenu #zmenu .zui .dropdown.xmenu_item {
+padding: 0!important;
+}
+
+.zmenu #zmenu .zui a.dropdown-toggle {
+padding: 0 20px 0 0!important;
+}
+
+.dropdown-menu {
+border: none!important;
+border-radius: 5px;
+box-shadow: 0 0 7px rgba(0,0,0,0.25);
+display: block!important;
+position: absolute!important; top: 25px!important; left: 50%!important;
+opacity: 0!important;
+transition: 0.3s!important;
+transform: translateX(-50%);
+visibility: hidden!important;
+}
+
+div.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu {
+opacity: 1!important;
+visibility: visible!important;
+}
+
+.zmenu #search_form {
+position: absolute; top: -3px; left: -205px;
+}
+
+.zmenu #search_form #search_keywords {
+background: none!important;
+border: 1px solid var(--light-borders);
+border-radius: 3px!important;
+box-shadow: 0 0 0 transparent;
+color: var(--light-text);
+height: 30px;
+transition: 0.45s;
+width: 190px;
+}
+
+.zmenu #search_form #search_keywords:focus {
+box-shadow: 0 0 5px var(--light-links);
+border: 1px solid var(--light-links);
+}
+
+.zmenu #search_form .btn-group {
+display: none;
+}
+
+/* Main Content */
+
+#content_wrapper {
+background: none!important;
+margin: 0 auto!important;
+width: 1400px!important;
+padding: 10px;
+}
+
+#content_wrapper_inner {
+border: none!important;
+padding: 0!important;
+}
+
+#content_wrapper_inner .table-bordered {
+border:none!important;
+}
+
+#content_wrapper_inner .table-bordered .tcat {
+background: none!important;
+border: 1px solid var(--light-borders)!important;
+border-width: 0 0 1px 0!important;
+font-size: 18px;
+padding: 10px;
+}
+
+#content_wrapper_inner .table-bordered .tcat b {
+font-weight: 100!important;
+}
+
+#content_wrapper_inner .table-bordered .table-striped td , #content_wrapper_inner .table-bordered .table-striped th {
+background: none!important;
+border: none!important;
+border-bottom: 1px solid var(--light-borders)!important;
+}
+
+.z-list{
+font-size: 0;
+background: none!important;
+border: none!important;
+border-radius: 3px!important;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1),0 0 0 1px var(--light-borders)!important;
+display: block!important;
+position: relative!important;
+min-height: 120px!important;
+margin: 15px 0 10px 0;
+transition: 0.5s;
+}
+
+.z-list:before {
+content: '';
+background: var(--light-borders);
+height: calc(100%);
+position: absolute; top: 50%; left: 310px;
+transform: translateY(-50%);
+width: 1px;
+}
+
+.z-list .cimage{
+border: 0!important;
+border-radius: 5px!important;
+height: 60px!important;
+width: 46px!important;
+margin: 0!important;
+padding: 0!important;
+position: absolute; top: 50%; left: 20px;
+transform: translateY(-50%);
+z-index: 15;
+}
+
+.z-list .stitle{
+display: inline-block!important;
+font-size: 24px;
+font-weight: 300!important;
+overflow: hidden!important;
+text-overflow: ellipsis!important;
+white-space: nowrap;
+width: 225px!important;
+margin-left: 75px;
+margin-top: 30px;
+}
+
+.z-list .z-padtop{
+font-size: 12px;
+margin: 0!important;
+position: absolute; top: 50%; left: 310px;
+transform: translateY(-50%);
+padding-top: 0!important;
+width: calc(100% - 335px);
+overflow: hidden!important;
+line-height: 1.25em!important;
+max-height: calc(8.75em + 5px)!important;
+}
+
+.z-list .z-padtop2{
+padding-top: 5px!important;
+}
+
+.z-list .icon-chevron-right{
+display: none;
+}
+
+.z-list a[href*="/u/"] {
+font-size: 14px;
+position: absolute; top: 65px; left: 75px;
+}
+
+/* Dark Theme Stuff */
+
+if dark-theme {
+
+a {
+color: var(--dark-links)!important;
+}
+
+body {
+background: var(--dark-main)!important;
+color: var(--dark-text)!important;
+}
+
+#top {
+border-bottom: 1px solid var(--dark-borders);
+color: var(--dark-text)!important;
+}
+
+#top .menulink > a[href="/"] {
+background-color: dark-logo-color;
+}
+
+#top .menulink span[class*="icon"] {
+color: var(--dark-text)!important;
+}
+
+#top #name_login * {
+color: var(--dark-text)!important;
+}
+
+.zmenu #search_form #search_keywords {
+border: 1px solid var(--dark-borders);
+color: var(--dark-text);
+}
+
+#content_wrapper_inner .table-bordered .tcat {
+border-color: var(--dark-borders)!important;
+}
+
+.z-list{
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1),0 0 0 1px var(--dark-borders)!important;
+}
+
+}
+
+}
+@-moz-document regexp("https:\\/\\/[^m].*fanfiction[.]net\\/(?!atom).*(anime|book|cartoon|comic|game|misc|movie|play|tv)\\/") {
+
+a {
+
+}
+
+}
+
+@-moz-document regexp("https:\\/\\/[^m].*fanfiction[.]net\\/(?!atom).*(anime|book|cartoon|comic|game|misc|movie|play|tv)\\/.*\\/(.*)") {
+
+a {
+
+}
+
+}
+
+@-moz-document regexp("https:\\/\\/[^m].*fanfiction[.]net\\/(?!atom).*(?=Crossovers).*") {
+
+a {
+
+}
+
+}
+
+@-moz-document url-prefix("https://www.fanfiction.net/s/") {
+
+/* Story Reading */
+
+#pre_story_links,.icon-mail-1,#profile_top div[style*="5px"], #profile_top span.xcontrast_txt, #profile_top .btn {
+display: none!important;
+}
+
+#profile_top {
+border-radius: 3px!important;
+display: block!important;
+position: relative;
+min-height: 100px!important;
+max-height: 150px!important;
+margin: 15px 0 10px 0;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1),0 0 0 1px var(--light-borders);
+}
+
+#profile_top:after {
+mask-image: var(--book-cover);
+mask-size: 48px!important;
+-webkit-mask-image: var(--book-cover);
+-webkit-mask-size: 48px!important;
+content: '';
+background: var(--light-text);
+position: absolute; top: 50%; left: 14px;
+transform: translateY(-26px)!important;
+height: 52px;
+width: 46px;
+}
+
+#profile_top:before {
+content: '';
+background: var(--light-borders);
+height: calc(100%);
+position: absolute; top: 50%; left: 290px;
+transform: translateY(-50%);
+width: 1px;
+}
+
+#profile_top b {
+font-size: 24px;
+font-weight: 300;
+position: absolute; top: 25px; left: 72px;
+overflow: hidden;
+text-overflow: ellipsis!important;
+white-space: nowrap!important;
+width: 210px!important;
+}
+
+#profile_top .cimage {
+border: 0!important;
+border-radius: 5px!important;
+height: 60px!important;
+width: 46px!important;
+margin-left: 15px!important;
+padding: 0;
+position: absolute; top: 50%; left: 0;
+transform: translateY(-30px)!important;
+overflow: hidden!important;
+z-index: 5;
+}
+
+#profile_top a[href*="/u/"] {
+position: absolute;top: 53px!important; left: 72px!important;
+}
+
+#profile_top div[style="margin-top:2px"] {
+font-size: 14px;
+margin: 0!important;
+position: absolute; top: 50%; left: 310px;
+transform: translateY(-50%);
+width: calc(100% - 335px);
+}
+
+#profile_top .xcontrast_txt ~ .xgray {
+display: none;
+}
+
+if dark-theme {
+
+#profile_top {
+
+box-shadow: 0 2px 2px 0 var(--dark-borders),0 0 0 1px var(--dark-borders);
+
+}
+
+}
+
+}
